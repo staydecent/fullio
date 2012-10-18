@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Adrian Unger">
+    <title>{% if user.name %}{{ user.name }}&rsquo;s Fullio Settings &ndash; {% endif %}Fullio</title>
+    <link rel="stylesheet" href="{{ base_url }}assets/css/style-0.1.0.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="{{ base_url }}assets/js/respond.min.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21814970-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body class="index">
+
+{% block content %}{% endblock %}
+
+<footer id="footer" class="hide">
+    <div class="inner">
+        <p class="centre"><em>A @<a class="grey" href="http://twitter.com/staydecent">staydecent</a> &amp; @<a class="grey" href="http://twitter.com/markstuckert">markstuckert</a> joint.</em>
+        <br><a href="http://blog.fullioapp.com/" target="_blank">Blog</a> / <a href="mailto:fullio&#64;staydecent.ca" target="_blank">Contact</a> </p>
+    </div>
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>!window.jQuery && document.write('<script src="{{ base_url }}assets/js/jquery-1.4.2.min.js"><\/script>')</script>
+<script type="text/javascript" src="{{ base_url }}assets/js/jquery.anystretch.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+
+    $('#footer').fadeIn(850);
+});
+</script>
+{% block script %}{% endblock %}
+
+</body>
+</html>

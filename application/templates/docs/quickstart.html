@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Quickstart Guide</h2>
+<nav>
+    <a href="{{ base_url }}docs">Documentation</a> &raquo;
+    <em>Quickstart Guide</em>
+</nav>
+
+<section id="intro">
+<h3>Introduction</h3>
+
+<p>Using the email address that you signed up with, you&rsquo;re able to add photo sets as well as edit existing sets. While viewing your own Fullio site, you can log in and edit any of the text, inline. You can also delete any images.</p>
+
+<p class="big">Just email us at <a href="mailto:post@fullioapp.mailgun.org">post@fullioapp.mailgun.org</a></p>
+
+<dl>
+    <dt>Mail Subject</dt>
+        <dd>The <em>title</em> of your new or existing Set</dd>
+    <dt>Mail Body</dt>
+        <dd>The <em>desription</em> of your Set</dd>
+    <dt>Attachments</dt>
+        <dd>The main content of your Set, the images!</dd>
+</dl>
+</section>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

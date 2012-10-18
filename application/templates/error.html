@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="landing">
+    <div class="inner">
+        <p class="big">{{ status }}</p>
+        <p>{{ msg }}</p>
+        <p>Try the <a href="{{ base_url }}" rel="home">homepage</a>!</p>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script> 
+    jQuery(document).ready(function($) {
+ 
+        $.backstretch("{{ base_url }}assets/i/dv028491.jpg", {speed: 450});
+        var landing = $('#landing');
+ 
+        function _adjustLanding(landing) {
+            var rootElement = ("onorientationchange" in window) ? $(document) : $(window),
+                topSpace = (rootElement.height() / 2) - (landing.height() / 2);
+            landing.hide().css({ marginTop:topSpace, height:landing.height(), overflow:'hidden' }).fadeIn(200);
+        }
+        _adjustLanding(landing);
+        $(window).resize(_adjustLanding(landing));
+        /*
+            Swap value for input
+        */
+        swap_value = [];
+        $('input').each(function(i) {
+            swap_value[i] = $(this).val();
+                $(this).focus(function() {
+                if ($(this).val() == swap_value[i]) {
+                    $(this).val("");
+                }
+            }).blur(function() {
+                if ($.trim($(this).val()) == "") { 
+                    $(this).val(swap_value[i]);
+                }
+            });
+        });
+        $('input#email').focus(function() {
+            $('input.hide').show();
+            landing.animate({ height:(landing.height() + $('form').height()) }, 400);
+            $("#new_user").validate();
+        });
+ 
+    });
+</script>
+{% endblock %}

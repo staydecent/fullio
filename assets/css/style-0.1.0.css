@@ -1,0 +1,318 @@
+/*
+    style.css
+
+    organization based on:
+     http://developers.whatwg.org/content-models.html
+
+    01 - Reset
+    02 - Structure
+    03 - Headings
+    04 - Text
+    05 - Lists
+    06 - Forms
+    07 - Embeds
+    08 - Grid
+    09 - Mobile
+    10 - Print
+*/
+
+/* 
+    01 - Reset 
+*/
+h1,h2,h3,h4,h5,h6,address,blockquote,div,p,pre,code,body,dl,dt,dd,ol,ul,li,fieldset,form,input,legend,textarea { 
+    margin:0; 
+    padding:0; 
+}
+object { 
+    outline:none; 
+}
+article,aside,footer,header,nav,section { 
+    display:block;
+}
+
+/* 
+    02 - Structure
+*/
+html {
+    position:relative;
+}
+body {
+    font:62.5% Helvetica, Arial, sans-serif; /* 10px assuming browser default of 16px */
+    color:#1a1a1a;
+    background:#000;
+}
+.inner {
+    font-size:14px;
+    line-height:1.5;
+    /* http://cssgrid.net */
+    width:100%;
+    max-width:640px; /* Full width */
+    margin:0 auto;
+    overflow:hidden;
+}
+.hide {
+    display:none;
+}
+#landing > .inner {
+    width:260px;
+    padding:20px;
+    background-color:#fff;
+    box-shadow:0 0 5px #222;
+        -o-box-shadow:0 0 5px #222;
+        -icab-box-shadow:0 0 5px #222;
+        -khtml-box-shadow:0 0 5px #222;
+        -moz-box-shadow:0 0 5px #222;
+        -webkit-box-shadow:0 0 5px #222;
+}
+#docs {
+    margin-top:40px;
+}
+#docs > .inner {
+    padding:20px;
+    background-color:#fff;
+    box-shadow:0 0 25px #222;
+        -o-box-shadow:0 0 5px #222;
+        -icab-box-shadow:0 0 5px #222;
+        -khtml-box-shadow:0 0 5px #222;
+        -moz-box-shadow:0 0 5px #222;
+        -webkit-box-shadow:0 0 5px #222;
+}
+#footer {
+    padding-top:40px;
+    font:10px/1.5 Georgia, serif;
+    color:#777;
+}
+nav {
+    font-size:10px;
+    border-top:5px solid #eee;
+    margin:10px 0 20px;
+}
+
+/* 
+    03 - Headings
+*/
+h1 { 
+    overflow:hidden;
+    text-indent:-9999px;
+    width:46px;
+    height:18px;
+    margin:10px auto 30px;
+    background:transparent url(../i/logo.gif) no-repeat;
+}
+h2 {
+    font:800 36px/1 Helvetica, Arial, sans-serif;
+    color:#222;
+    border-top:1px solid #eee;
+    padding-top:10px;
+}
+h3 {
+    font:80 24px/1 Helvetica, sans-serif;
+    color:#222;
+    padding:30px 0 15px;
+}
+
+/* 
+    04 - Text
+*/
+a {
+    color:#f00;
+    -webkit-transition:color 0.5s ease;
+    -moz-transition:color 0.5s ease;
+    -o-transition:color 0.5s ease;
+    transition:color 0.5s ease;
+}
+a:hover { 
+    color:#000;
+}
+a.grey {
+    color:#999;
+    text-decoration:none;
+}
+a.grey:hover {
+    color:#ccc;
+}
+#global_nav {
+    position:absolute;
+    display:block;
+    top:10px;
+    right:10px;
+    font-size:12px;
+}
+.button {
+    padding:3px 6px;
+    background:#f00;
+    color:#fff;
+    text-decoration:none;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+    -webkit-transition:background-color 0.5s ease;
+    -moz-transition:background-color 0.5s ease;
+    -o-transition:background-color 0.5s ease;
+    transition:background-color 0.5s ease;
+}
+.button:hover {
+    background:#000;
+    color:#fff;
+}
+.button:active {
+   margin-top:1px;
+}
+span.date {
+    color:#aaa;
+    font-weight:800;
+}
+address,cite,dfn,em,var { 
+    font-style:italic; 
+}
+blockquote { 
+    padding:0 0 2em 0; 
+    font-size:0.9em; 
+    line-height:1.4em; 
+}
+p,pre {
+    text-indent:0;
+    padding:0 0 2em 0; 
+}
+p.big {
+    font:400 1.6em Helvetica, Arial, sans-serif;
+    text-align:center;
+}
+.centre {
+    text-align:center;
+}
+section > p {
+    font-size:15px;
+    color:#444;
+    padding:0 0 15px;
+}
+
+/* 
+    05 - Lists 
+*/
+ol,ul { 
+}
+ol > li { 
+    list-style:decimal outside none; 
+}
+ul > li { 
+    list-style:disc outside none; 
+}
+.index ul > li {
+    list-style:none outside none;
+}
+dt {
+    font-weight:800;
+}
+dd {
+    margin-left:15px;
+}
+#toc {
+    font-size:18px;
+}
+#toc > ol > li {
+    border-bottom:1px solid #eee;
+    list-style:none outside none; 
+}
+
+/* 
+    06 - Forms 
+*/
+form {
+    
+}
+label {
+    display:block;
+    margin-top:8px;
+}
+input, textarea {
+    border:1px solid #ddd;
+    font:400 1em Georgia, Times, serif;
+    font-style:italic;
+    color:#777;
+    padding:5px 10px;
+    margin-bottom:5px;
+    width:240px;
+}
+textarea {
+    min-height:60px;
+}
+input[type=button], input[type=submit], button {
+    font:800 0.8em Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    color:#1a1a1a;
+    cursor:pointer;
+    width:262px;
+    margin:0 auto;
+}
+input[type=button]:hover, input[type=submit]:hover, button:hover {
+    background-color:#1a1a1a;
+    border-color:#1a1a1a;
+    color:#fff;
+}
+.error {
+    display:block;
+    font:800 0.8em Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    color:#f00;
+    margin:-3px 0 5px;
+}
+.msg {
+    font:800 0.8em Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    color:#1a2;
+}
+
+/* 
+    07 - Embeds
+*/
+img { 
+    border:0; 
+    vertical-align:top;
+}
+.text-replace { 
+    overflow:hidden;
+    text-indent:-9999px;
+}
+.block {
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+/* 
+    08 - Grid
+*/
+.col1,.col2,.col3,.col4,.col5,.col6,.colH { float:left; margin-right:4%; }
+.last { margin-right:0; }
+.col1 { width:16%; }
+.col2 { width:36%; }
+.col3 { width:56%; }
+.col4 { width:76%; }
+.col5 { width:96%; }
+.colH { width:46%; }
+
+.skip1 { margin-left:18%; }
+
+.move { position:absolute; left:-9999px; }
+.text-replace { overflow:hidden;text-indent:-9999px; }
+.right{float:right !important;}
+.left{float:left !important;}
+.block { display:block; width:100%; height:100%; }
+.uppercase { text-transform:uppercase; }
+.centre { text-align:center; }
+.hide {display:none;}
+
+/*
+    10 - Print Styles (www.phpied.com/delay-loading-your-print-css/)
+*/
+@media print {
+    * { background:transparent !important; color:#1a1a1a !important; text-shadow:none; }
+    a, a:visited { color:#1a1a1a !important; text-decoration:underline; }
+    a:after { content: " (" attr(href) ")"; }
+    abbr:after { content: " (" attr(title) ")"; }&nbsp;&nbsp;&nbsp;&nbsp;.ir a:after { content: ""; } &nbsp;/* Don't show links for images */&nbsp;&nbsp;&nbsp;&nbsp;pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }&nbsp;&nbsp;&nbsp;&nbsp;img { page-break-inside: avoid; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3{ page-break-after: avoid; }
+}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="global_nav">
+    <a id="login_link" class="button" href="{{ base_url }}logout">Log out</a>
+</div>
+
+<div id="docs">
+    <div class="inner">
+
+        <h1><a href="{{ base_url }}" rel="home" class="block">Fullioapp</a></h1>
+
+        <h2>Welcome {{ user.name }}</h2>
+
+        <nav>
+        </nav>
+
+        <div class="colH">
+        <h3>Account Settings</h3>
+        {% if msg %}<p class="msg hide">{{ msg }}</p>{% endif %}
+        <form id="edit_user" action="{{ base_url }}user" method="post">
+            <p>
+                <label for="name">Name</label>
+                <input tpe="text" id="name" name="name" value="{% if user.name %}{{ user.name }}{% else %}Your Name{% endif %}">
+
+                <label for="email">Email</label>
+                <input class="email" type="text" id="email" name="email" value="{% if user.email %}{{ user.email }}{% else %}Your Email{% endif %}">
+
+                <label for="subdomain">Subdomain</label>
+                <input type="text" id="subdoman" name="subdomain" value="{% if user.subdomain %}{{ user.subdomain }}{% else %}Your Subdomain{% endif %}">
+
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio">{% if user.bio %}{{ user.bio }}{% else %}Your Bio{% endif %}</textarea>
+
+                <label for="password">Password (<small>Leave blank, to remain unchanged</small>)</label>
+                <input class="password" type="password" id="password" name="password" value="">
+            </p>
+            
+            <input type="submit" value="Update!">
+        </form>
+        </div>
+
+        <div class="colH last">
+            <h3>Your Fullio</h3>
+            <p class="big"><a href="{{ user.url }}">{{ user.url }}</a></p>
+
+            <h3>Help</h3>
+            <p>Read our <a href="{{ base_url }}docs/quickstart">Quickstart Guide</a> on creating and editing photo sets with Fullio.</p>
+
+            <p><a href="{{ base_url }}docs">View all documentation</a></p>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script> 
+    jQuery(document).ready(function($) {
+ 
+        $.anystretch("{{ base_url }}assets/i/dv028491.jpg", {speed: 450});
+
+        $('.error, .msg').fadeIn(200);
+
+        setInterval(function() {
+            $('.error, .msg').fadeOut(200);
+        }, 2500);
+ 
+    });
+</script>
+{% endblock %}
